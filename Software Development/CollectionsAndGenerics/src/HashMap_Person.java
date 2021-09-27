@@ -2,8 +2,8 @@ public class HashMap_Person
 {
 	
 	private String name;
-	private String address;
-	private long phoneNumber;
+	private final String address;
+	private final long phoneNumber;
 	
 	public HashMap_Person(){
 		this.name=null;

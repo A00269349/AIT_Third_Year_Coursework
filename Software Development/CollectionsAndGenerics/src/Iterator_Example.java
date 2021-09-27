@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Iterator_Example {
 
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 		// Create an array list
 		ArrayList al = new ArrayList();
 		

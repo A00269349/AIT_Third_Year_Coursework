@@ -3,7 +3,7 @@ import java.util.HashMap;
 public class HashMap_Example
 {
 	
-	private HashMap<String, HashMap_Person> theListofPeople = new HashMap();
+	private final HashMap<String, HashMap_Person> theListofPeople = new HashMap();
 	
 	public HashMap_Example(){
 		

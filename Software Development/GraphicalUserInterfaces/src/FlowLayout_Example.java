@@ -1,7 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
 
-public class FlowLayoutExample extends JFrame {
+public class FlowLayout_Example extends JFrame {
   private JButton theButton1 = new JButton("Button 1");
   private JButton theButton2 = new JButton("2");
   private JButton theButton3 = new JButton("Button 3");
@@ -9,9 +9,9 @@ public class FlowLayoutExample extends JFrame {
   private JButton theButton5 = new JButton("Button 5");
 
     public static void main(String args[]) {
-	    new FlowLayoutExample();
+	    new FlowLayout_Example();
     }
-    public FlowLayoutExample(){
+    public FlowLayout_Example(){
         
         getContentPane().setLayout(new FlowLayout());
 

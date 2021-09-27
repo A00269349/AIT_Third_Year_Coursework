@@ -1,15 +1,14 @@
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 
-public class BoxLayoutExample extends JFrame {
+public class BoxLayout_Example extends JFrame {
 	private JButton theButton1 = new JButton("Button 1");
 	private JButton theButton2 = new JButton("Button 2");
 	private JButton theButton3 = new JButton("Button 3");
 	private JButton theButton4 = new JButton("Button 4");
 	private JButton theButton5 = new JButton("Long-Named Button 5");
 
-	public BoxLayoutExample() {
+	public BoxLayout_Example() {
 		
 		getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.X_AXIS));
 
@@ -33,6 +32,6 @@ public class BoxLayoutExample extends JFrame {
 	}
 
 	public static void main(String args[]) {
-		new BoxLayoutExample();
+		new BoxLayout_Example();
 	}
 }

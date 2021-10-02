@@ -10,7 +10,6 @@ public class GridBagLayout_Example extends JFrame {
     private final GridBagLayout gridBag = new GridBagLayout();
     private final GridBagConstraints constraints = new GridBagConstraints();
     public GridBagLayout_Example() {
-        getContentPane().setLayout(new GridLayout(3, 2));
 
         constraints.gridx = 0;
         constraints.gridy = 0;

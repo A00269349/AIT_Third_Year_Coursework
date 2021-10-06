@@ -4,7 +4,7 @@ public class SimpleThread extends Thread {
 	}
 	public void run() {
 		for (int i = 0; i < 10; i++) {
-			System.out.println(i + " " + getName());
+			System.out.println(i+1 + " " + getName());
 			try {
 				sleep((long)(Math.random() * 1000));
 				//sleep(1000);

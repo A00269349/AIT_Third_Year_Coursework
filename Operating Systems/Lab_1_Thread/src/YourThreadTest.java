@@ -1,6 +1,11 @@
-public class YourThreadTest{
+/**
+ * The type Your thread test.
+ * @author Raphael Salaja
+ */
+public class YourThreadTest
+{
     public static void main(String[] args) {
-        new YourThread("<|THREAD HALF TIME|", false).start();
-        new YourThread("<|THREAD NORMAL TIME|>", true).start();
+        new YourThreadRunnable("<|THREAD HALF TIME|", false).start();
+        new YourThreadRunnable("<|THREAD NORMAL TIME|>", true).start();
     }
 }

@@ -1,16 +1,19 @@
 import java.util.Locale;
-
-public class YourThreadRunnable implements Runnable {
-
+/**
+ * The type Your thread runnable.
+ * @author Raphael Salaja
+ */
+public class YourThreadRunnable implements Runnable
+{
     String name;
     boolean half_time;
-    long start_time, end_time, time_elapsed;
-
+    long start_time,
+    end_time,
+    time_elapsed;
     public YourThreadRunnable(String name, boolean half_time) {
         this.name = name;
         this.half_time = half_time;
     }
-
     private void printDetails() {
         System.out.println();
         System.out.println("----------- THREAD TABLE -----------");
@@ -19,7 +22,6 @@ public class YourThreadRunnable implements Runnable {
         System.out.println("-----------------------------------");
         System.out.println();
     }
-
     @Override
     public void run() {
         start_time = System.currentTimeMillis();
@@ -29,7 +31,8 @@ public class YourThreadRunnable implements Runnable {
             try {
                 int time = half_time ? 500 : 1000;
                 Thread.sleep((long) (Math.random() * time));
-            } catch (InterruptedException e) {
+            }
+            catch (InterruptedException e) {
             }
         }
         end_time = System.currentTimeMillis();

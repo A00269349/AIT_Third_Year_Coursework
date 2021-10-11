@@ -7,6 +7,7 @@ class tusPlayer
 public:
 	// Default constructor
 	tusPlayer();
+	tusPlayer(int healthParam, tusLocation locParam, bool shieldOnParam, tusWeapon weapon);
 	// Constructor
 	tusPlayer(int healthParam, tusLocation locParam, tusWeapon weapon, bool shieldOnParam = false);
 

@@ -1,8 +1,11 @@
 #pragma once
+#include "tusPlayer.h"
 
 class tusEnemy
 {
 public:
+
+
 	// Default constructor
 	tusEnemy();
 
@@ -11,4 +14,5 @@ public:
 
 private:
 	int damage;
+	tusPlayer* p;
 };

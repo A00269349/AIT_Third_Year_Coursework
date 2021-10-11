@@ -140,15 +140,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="aggregation.cpp" />
-    <ClCompile Include="tusenemy.cpp" />
+    <ClCompile Include="tusEnemy.cpp" />
     <ClCompile Include="tuslocation.cpp" />
-    <ClCompile Include="tusplayer.cpp" />
+    <ClCompile Include="tusPlayer.cpp" />
     <ClCompile Include="tusWeapon.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="tusenemy.h" />
+    <ClInclude Include="tusEnemy.h" />
     <ClInclude Include="tusLocation.h" />
-    <ClInclude Include="tusplayer.h" />
+    <ClInclude Include="tusPlayer.h" />
     <ClInclude Include="tusWeapon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

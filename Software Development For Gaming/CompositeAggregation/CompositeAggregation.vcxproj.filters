@@ -18,13 +18,13 @@
     <ClCompile Include="aggregation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="tusenemy.cpp">
+    <ClCompile Include="tusEnemy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="tuslocation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="tusplayer.cpp">
+    <ClCompile Include="tusPlayer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="tusWeapon.cpp">
@@ -32,13 +32,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="tusenemy.h">
+    <ClInclude Include="tusEnemy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="tusLocation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="tusplayer.h">
+    <ClInclude Include="tusPlayer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="tusWeapon.h">

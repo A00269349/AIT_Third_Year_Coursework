@@ -5,7 +5,7 @@
 public class YourThreadTest
 {
     public static void main(String[] args) {
-        new YourThreadRunnable("<|THREAD HALF TIME|", false).start();
-        new YourThreadRunnable("<|THREAD NORMAL TIME|>", true).start();
+        new YourThreadRunnable("<|THREAD HALF TIME|", false);
+        new YourThreadRunnable("<|THREAD NORMAL TIME|>", true);
     }
 }

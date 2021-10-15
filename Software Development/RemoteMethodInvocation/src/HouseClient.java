@@ -1,6 +1,4 @@
 import java.rmi.*;
-
-
 public class HouseClient {
     public static void main(String[] args) {
         String url = "rmi:///";
@@ -10,7 +8,7 @@ public class HouseClient {
             String ownersBung = h1.getOwner();
             System.out.println("RESULT: " + ownersBung);
 
-            HouseInterface h2 = (HouseInterface) Naming.lookup(url + "DORMERS_HOUSE");
+            HouseInterface h2 = (HouseInterface) Naming.lookup(url + "DORMER_HOUSE");
             String ownersdorm = h2.getOwner();
             System.out.println("RESULT: " + ownersdorm);
         }catch (Exception e) {e.printStackTrace();}

@@ -6,9 +6,12 @@ class Triangle : public Shape
 {
 public:
 	Triangle();
-	Triangle(double p_base, double p_height, std::string p_color)
+	Triangle(std::string p_color, double p_base, double p_height);
 	void SetPerpendicularHeight(double height);
 	void SetBaseLength(double base);
+	void PrintDetails();
+	void CalculateArea();
+
 private:
 	double height, base;
 

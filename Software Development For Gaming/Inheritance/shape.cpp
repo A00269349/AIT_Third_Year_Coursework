@@ -1,6 +1,7 @@
 // Include the shape header file.
 #include "shape.h"
-
+#include <iostream>
+using namespace std;
 Shape::Shape()
 {
 	colour = "empty";
@@ -19,6 +20,11 @@ std::string Shape::getColour() const
 void Shape::setColour(std::string colourParam)
 {
 	colour = colourParam;
+}
+
+void Shape::PrintDetails()
+{
+	cout << "COLOUR: " << colour << endl;;
 }
 
 

@@ -15,7 +15,9 @@ public:
 
     //  Set the colour of the shape
     void setColour(std::string colourParam);
-	void PrintDetails();
+	virtual void PrintDetails();
+	virtual double CalculateArea() ;
+
 
 private:
 

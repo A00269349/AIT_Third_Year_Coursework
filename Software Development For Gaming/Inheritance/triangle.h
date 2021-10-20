@@ -9,8 +9,8 @@ public:
 	Triangle(std::string p_color, double p_base, double p_height);
 	void SetPerpendicularHeight(double height);
 	void SetBaseLength(double base);
-	void PrintDetails();
-	void CalculateArea();
+	virtual void PrintDetails();
+	virtual double CalculateArea();
 
 private:
 	double height, base;

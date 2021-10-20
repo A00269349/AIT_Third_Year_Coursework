@@ -27,6 +27,11 @@ void Shape::PrintDetails()
 	cout << "COLOUR: " << colour << endl;;
 }
 
+double Shape::CalculateArea()
+{
+	return 0.0;
+}
+
 
 
 

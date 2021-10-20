@@ -24,18 +24,15 @@ void Triangle::SetPerpendicularHeight(double p_height){
 	height = p_height;
 }
 
-void Triangle::PrintDetails()
+ void Triangle::PrintDetails()
 {
 	Shape::PrintDetails();
 	cout << "HEIGHT = " << height << endl;;
 	cout << "BASE = " << base << endl;;
 }
 
-void Triangle::CalculateArea() {
+double Triangle::CalculateArea() {
 	double half = 1 / 2;
-
 	double area = half * base * height;
-
-	cout << "AREA: " << area;
-
+	return area;
 }

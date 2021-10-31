@@ -9,7 +9,7 @@ public class HelloClient {
 
 	public static void main(String[] args) throws Exception {
 		
-		InetAddress inet = InetAddress.getByName("localhost");
+		InetAddress inet = InetAddress.getByName("192.168.23.49"); // Daniel's ip
 		Socket socket = new Socket(inet, 2000);
 		
 		OutputStream out = socket.getOutputStream();

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Lab_2_Mutual_Exclusion/Lab_2_Mutual_Exclusion.iml" filepath="$PROJECT_DIR$/Lab_2_Mutual_Exclusion/Lab_2_Mutual_Exclusion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab_2_Notes/Lab_2_Notes.iml" filepath="$PROJECT_DIR$/Lab_2_Notes/Lab_2_Notes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab_3_JavaMonitorThreadedServers/Lab_3_JavaMonitorThreadedServers.iml" filepath="$PROJECT_DIR$/Lab_3_JavaMonitorThreadedServers/Lab_3_JavaMonitorThreadedServers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab_3_Notes/Lab_3_Notes.iml" filepath="$PROJECT_DIR$/Lab_3_Notes/Lab_3_Notes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab_4_Java_Memory_Model/Lab_4_Java_Memory_Model.iml" filepath="$PROJECT_DIR$/Lab_4_Java_Memory_Model/Lab_4_Java_Memory_Model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Operating Systems.iml" filepath="$PROJECT_DIR$/Operating Systems.iml" />
+    </modules>
+  </component>
+</project>

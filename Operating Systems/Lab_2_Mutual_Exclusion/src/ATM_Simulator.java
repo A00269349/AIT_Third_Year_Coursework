@@ -24,6 +24,5 @@ public class ATM_Simulator {
         thread_bank.join();
 
         System.out.printf("Account : Final Balance: %f\n", account.getBalance());
-
     }
 }

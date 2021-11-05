@@ -1,6 +1,5 @@
 import java.io.Serializable;
 
-
 public class Staff implements Serializable {
     private String staffID;
     private String name;

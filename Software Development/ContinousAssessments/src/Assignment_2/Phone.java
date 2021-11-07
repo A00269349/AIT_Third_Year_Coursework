@@ -1,3 +1,5 @@
+package Assignment_2;
+
 import java.io.Serializable;
 
 public class Phone implements Serializable{
@@ -19,6 +21,7 @@ public class Phone implements Serializable{
         this.smart = smart;
         this.price = price;
     }
+
 
     public String getMake() {
         return make;
@@ -46,5 +49,18 @@ public class Phone implements Serializable{
 
     public int getPrice() {
         return price;
+    }
+
+    @Override
+    public String toString() {
+        return
+                make   + "" +
+                model  + " " +
+                memory + " " +
+                camera + " " +
+                screen_size   + " " +
+                smart  + " " +
+                price;
+
     }
 }

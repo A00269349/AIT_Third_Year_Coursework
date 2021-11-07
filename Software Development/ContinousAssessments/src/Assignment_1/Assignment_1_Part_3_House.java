@@ -1,3 +1,4 @@
+package Assignment_1;
 public class Assignment_1_Part_3_House
 {
     int numberOfBedrooms, numberOfBathrooms;

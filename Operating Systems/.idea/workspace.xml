@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="576bbd1b-475d-49a6-b983-acad4126076b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab_3_JavaMonitorThreadedServers/bin/ClientSide.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab_3_JavaMonitorThreadedServers/bin/HelloClient.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab_3_JavaMonitorThreadedServers/bin/HelloServer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab_3_JavaMonitorThreadedServers/bin/ThreadedFileServerApp.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab_3_JavaMonitorThreadedServers/bin/WorkerThread.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab_4_Java_Memory_Model/Lab_4_Java_Memory_Model.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab_4_Java_Memory_Model/src/ie/ait/week5/blockingqueue/Consumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab_4_Java_Memory_Model/src/ie/ait/week5/blockingqueue/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab_4_Java_Memory_Model/src/ie/ait/week5/blockingqueue/Producer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab_4_Java_Memory_Model/src/ie/ait/week5/example1/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab_4_Java_Memory_Model/src/ie/ait/week5/example1/Notifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab_4_Java_Memory_Model/src/ie/ait/week5/example1/WaitNotifyTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab_4_Java_Memory_Model/src/ie/ait/week5/example1/Waiter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab_3_JavaMonitorThreadedServers/A00269349_RAPHAEL_SALAJA_LAB_3.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Lab_3_JavaMonitorThreadedServers/A00269349_RAPHAEL_SALAJA_LAB_3.docx" afterDir="false" />
-    </list>
+    <list default="true" id="576bbd1b-475d-49a6-b983-acad4126076b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +28,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Lab_4_Java_Memory_Model/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Software Development" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />

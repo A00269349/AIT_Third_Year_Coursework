@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="576bbd1b-475d-49a6-b983-acad4126076b" name="Changes" comment="" />
+    <list default="true" id="576bbd1b-475d-49a6-b983-acad4126076b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Lab_5_Thread_Saftey/Lab_5_Thread_Saftey.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,11 +32,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Software Development" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -40,17 +45,17 @@
       <recent name="C:\Users\A00269349\Documents\GitHub\AIT_Third_Year_Coursework\Operating Systems\Lab_3_JavaMonitorThreadedServers\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\A00269349\Documents\GitHub\AIT_Third_Year_Coursework\Operating Systems\Lab_5_Thread_Saftey\src" />
       <recent name="C:\Users\A00269349\Documents\GitHub\AIT_Third_Year_Coursework\Operating Systems\Lab_4_Java_Memory_Model\src" />
       <recent name="C:\Users\A00269349\Documents\GitHub\AIT_Third_Year_Coursework\Operating Systems\Lab_3_JavaMonitorThreadedServers" />
       <recent name="C:\Users\A00269349\Documents\GitHub\AIT_Third_Year_Coursework\Operating Systems\Lab_3_JavaMonitorThreadedServers\src" />
       <recent name="C:\Users\A00269349\Documents\GitHub\AIT_Third_Year_Coursework\Operating Systems\Lab_3_Notes\src" />
-      <recent name="C:\Users\A00269349\Documents\GitHub\AIT_Third_Year_Coursework\Operating Systems\Lab_2_Mutual_Exclusion\Word Document" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WaitNotifyTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="ClientSide" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ClientSide" />
       <module name="Lab_3_JavaMonitorThreadedServers" />
@@ -58,16 +63,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HelloClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="HelloClient" />
-      <module name="Lab_3_Notes" />
+    <configuration name="HelloServer (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HelloServer" />
+      <module name="Lab_3_JavaMonitorThreadedServers" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HelloServer (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="HelloServer" />
-      <module name="Lab_3_JavaMonitorThreadedServers" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ie.ait.week5.blockingqueue.Main" />
+      <module name="Lab_5_Thread_Saftey" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ie.ait.week5.blockingqueue.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -107,11 +118,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.WaitNotifyTest" />
         <item itemvalue="Application.HelloServer (1)" />
         <item itemvalue="Application.ClientSide" />
         <item itemvalue="Application.ThreadedFileServerApp" />
-        <item itemvalue="Application.HelloClient" />
       </list>
     </recent_temporary>
   </component>

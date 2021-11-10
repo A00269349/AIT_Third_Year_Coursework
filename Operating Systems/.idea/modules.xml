@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/Lab_3_JavaMonitorThreadedServers/Lab_3_JavaMonitorThreadedServers.iml" filepath="$PROJECT_DIR$/Lab_3_JavaMonitorThreadedServers/Lab_3_JavaMonitorThreadedServers.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lab_3_Notes/Lab_3_Notes.iml" filepath="$PROJECT_DIR$/Lab_3_Notes/Lab_3_Notes.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lab_4_Java_Memory_Model/Lab_4_Java_Memory_Model.iml" filepath="$PROJECT_DIR$/Lab_4_Java_Memory_Model/Lab_4_Java_Memory_Model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab_5_Thread_Saftey/Lab_5_Thread_Saftey.iml" filepath="$PROJECT_DIR$/Lab_5_Thread_Saftey/Lab_5_Thread_Saftey.iml" />
       <module fileurl="file://$PROJECT_DIR$/Operating Systems.iml" filepath="$PROJECT_DIR$/Operating Systems.iml" />
     </modules>
   </component>

@@ -1,14 +1,10 @@
 package Assignment_2;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.ArrayList;
 
-public class Main {
+public class Main
+{
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         ArrayList<Phone> phones = CreatePhonesArrayList();
         //  SERIALIZE
@@ -17,7 +13,8 @@ public class Main {
             ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
             SerializeMembers(phones, objectOut);
             objectOut.close();
-        } catch (FileNotFoundException e) {
+        }
+        catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         //  DESERIALIZE
@@ -26,7 +23,8 @@ public class Main {
             ObjectInputStream objectIn = new ObjectInputStream(fileIn);
             DeserializeMembers(phones, objectIn);
             objectIn.close();
-        } catch (FileNotFoundException e) {
+        }
+        catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         System.out.println("---------------------------------------------------------------------------------------------------------------");
@@ -39,7 +37,8 @@ public class Main {
             ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
             SerializeMembers(phones, objectOut);
             objectOut.close();
-        } catch (FileNotFoundException e) {
+        }
+        catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         //  DESERIALIZE
@@ -48,25 +47,24 @@ public class Main {
             ObjectInputStream objectIn = new ObjectInputStream(fileIn);
             DeserializeMembers(phones, objectIn);
             objectIn.close();
-        } catch (FileNotFoundException e) {
+        }
+        catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
     }
     private static void SerializeMembers(ArrayList<Phone> phones, ObjectOutputStream objectOut) throws IOException {
         for (int i = 0; i < phones.size(); i++) {
             objectOut.writeObject(phones.get(i));
         }
-
     }
-    private static void DeserializeMembers(ArrayList<Phone> phones,  ObjectInputStream objectIn) throws IOException, ClassNotFoundException {
+    private static void DeserializeMembers(ArrayList<Phone> phones, ObjectInputStream objectIn) throws IOException, ClassNotFoundException {
         Phone new_phone_1 = (Phone) objectIn.readObject();
         Phone new_phone_2 = (Phone) objectIn.readObject();
         Phone new_phone_3 = (Phone) objectIn.readObject();
         Phone new_phone_4 = (Phone) objectIn.readObject();
         Phone new_phone_5 = (Phone) objectIn.readObject();
         Phone new_phone_6 = (Phone) objectIn.readObject();
-       Phone new_phone_7 = (Phone) objectIn.readObject();
+        Phone new_phone_7 = (Phone) objectIn.readObject();
 
         print_object(new_phone_1);
         print_object(new_phone_2);
@@ -93,19 +91,16 @@ public class Main {
         phones.add(p6);
         phones.add(p7);
         return phones;
-
-
-
     }
     private static String convertBooleanToYesNo(boolean value) {
         if (value) {
             return "Yes";
-        } else {
+        }
+        else {
             return "No";
         }
     }
     private static void print_object(Phone new_phone) {
-        System.out.println(new_phone.getMake() + " " + new_phone.getModel() + " " + new_phone.getMemory() + " " + new_phone.getCamera() + " " + new_phone.getScreen_size() + " " + convertBooleanToYesNo(new_phone.getSmart())  + " " + new_phone.getPrice() + " ");
-
+        System.out.println(new_phone.getMake() + " " + new_phone.getModel() + " " + new_phone.getMemory() + " " + new_phone.getCamera() + " " + new_phone.getScreen_size() + " " + convertBooleanToYesNo(new_phone.getSmart()) + " " + new_phone.getPrice() + " ");
     }
 }

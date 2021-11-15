@@ -1,46 +1,92 @@
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.swing.*;
-import java.awt.*;
 
-public class GridBagLayout_Example extends JFrame {
-    private final JButton theButton1 = new JButton("Button 1");
-    private final JButton theButton2 = new JButton("2");
-    private final JButton theButton3 = new JButton("Button 3");
-    private final JButton theButton4 = new JButton("Long-Named Button 4");
-    private final JButton theButton5 = new JButton("Button 5");
-    private final GridBagLayout gridBag = new GridBagLayout();
-    private final GridBagConstraints constraints = new GridBagConstraints();
-    public GridBagLayout_Example() {
+public class GridBagLayout_Example {
+    private static void createAndShowGui() {
+        PlayerEditorPanel playerEditorPane = new PlayerEditorPanel();
+        int result = JOptionPane.showConfirmDialog(null, playerEditorPane,
+                "Edit Player", JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE);
+        if (result == JOptionPane.OK_OPTION) {
+            // TODO: do something with info
 
-        constraints.gridx = 0;
-        constraints.gridy = 0;
-        gridBag.setConstraints(theButton3, constraints);
-        getContentPane().add(theButton1);
-        constraints.gridx = 1;
-        constraints.gridy = 0;
-        gridBag.setConstraints(theButton3, constraints);
-        getContentPane().add(theButton2);
-        constraints.gridx = 2;
-        constraints.gridy = 0;
-        gridBag.setConstraints(theButton3, constraints);
-        getContentPane().add(theButton3);
-        constraints.gridx = 0;
-        constraints.gridy = 1;
-        gridBag.setConstraints(theButton3, constraints);
-        getContentPane().add(theButton4);
-        constraints.gridx = 1;
-        constraints.gridy = 1;
-        gridBag.setConstraints(theButton3, constraints);
-        getContentPane().add(theButton5);
-        constraints.gridx = 2;
-        constraints.gridy = 1;
-        gridBag.setConstraints(theButton3, constraints);
-
-        setSize(350, 200);
-        setVisible(true);
+            for (PlayerEditorPanel.FieldTitle fieldTitle :
+                    PlayerEditorPanel.FieldTitle.values()) {
+                System.out.printf("%10s: %s%n", fieldTitle.getTitle(),
+                        playerEditorPane.getFieldText(fieldTitle));
+            }
+        }
     }
 
     public static void main(String[] args) {
-        new GridBagLayout_Example();
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                createAndShowGui();
+            }
+        });
     }
 }
 
+@SuppressWarnings("serial")
+class PlayerEditorPanel extends JPanel {
+    enum FieldTitle {
+        NAME("Name"), SPEED("Speed"), STRENGTH("Strength");
+        private String title;
+
+        private FieldTitle(String title) {
+            this.title = title;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+    };
+
+    private static final Insets WEST_INSETS = new Insets(5, 0, 5, 5);
+    private static final Insets EAST_INSETS = new Insets(5, 5, 5, 0);
+    private Map<FieldTitle, JTextField> fieldMap = new HashMap<FieldTitle, JTextField>();
+
+    public PlayerEditorPanel() {
+        setLayout(new GridBagLayout());
+        setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createTitledBorder("Player Editor"),
+                BorderFactory.createEmptyBorder(5, 5, 5, 5)));
+        GridBagConstraints gbc;
+        for (int i = 0; i < FieldTitle.values().length; i++) {
+            FieldTitle fieldTitle = FieldTitle.values()[i];
+            gbc = createGbc(0, i);
+            add(new JLabel(fieldTitle.getTitle() + ":", JLabel.LEFT), gbc);
+            gbc = createGbc(1, i);
+            JTextField textField = new JTextField(10);
+            add(textField, gbc);
+            fieldMap.put(fieldTitle, textField);
+        }
+    }
+
+    private GridBagConstraints createGbc(int x, int y) {
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = x;
+        gbc.gridy = y;
+        gbc.gridwidth = 1;
+        gbc.gridheight = 1;
+
+        gbc.anchor = (x == 0) ? GridBagConstraints.WEST : GridBagConstraints.EAST;
+        gbc.fill = (x == 0) ? GridBagConstraints.BOTH
+                : GridBagConstraints.HORIZONTAL;
+
+        gbc.insets = (x == 0) ? WEST_INSETS : EAST_INSETS;
+        gbc.weightx = (x == 0) ? 0.1 : 1.0;
+        gbc.weighty = 1.0;
+        return gbc;
+    }
+
+    public String getFieldText(FieldTitle fieldTitle) {
+        return fieldMap.get(fieldTitle).getText();
+    }
+
+}

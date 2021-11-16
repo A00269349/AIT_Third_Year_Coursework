@@ -5,18 +5,13 @@ public class Consumer extends Thread implements Runnable {
     @Override
     public void run() {
         try {
-            Thread.sleep(1000);
+            Thread.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         while (true) {
             try {
-                Integer x = queue.poll();
-                if (x == null) {
-                    System.out.println(" CONSUMER DONE ");
-                    break;
-                }
-                process(x);
+                process(queue.take());
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

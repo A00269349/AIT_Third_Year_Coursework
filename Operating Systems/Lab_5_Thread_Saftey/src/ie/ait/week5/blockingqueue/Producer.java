@@ -17,7 +17,7 @@ public class Producer extends Thread implements Runnable {
                 System.out.println("[Producer] Puts : " + i);
                 queue.put(i);
                 try {
-                    sleep((int) (Math.random() * 100));
+                    sleep((int) (Math.random() * 1000));
                 } catch (InterruptedException e) {
                 }
             }

@@ -19,7 +19,7 @@ public class A3_View_CarDetails extends JFrame
     private final JFrame frame = new JFrame("CAR DETAILS");
     // DISPLAY CARS
     // TABLE DATA
-    private final String[] column_names = {"ID","MAKE", "SERIES", "COUNTRY", "POWER", "YEAR", "DOORS"};
+    private final String[] column_names = {"ID", "MAKE", "SERIES", "POWER", "COUNTRY", "YEAR", "DOORS"};
     private final DefaultTableModel default_table_model = new DefaultTableModel(null, column_names);
     private final JTable table = new JTable(default_table_model);
     // ADD PANEL
@@ -104,11 +104,10 @@ public class A3_View_CarDetails extends JFrame
         JScrollPane scrollPane = new JScrollPane(table);
 
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
-        centerRenderer.setHorizontalAlignment( JLabel.CENTER );
+        centerRenderer.setHorizontalAlignment(JLabel.CENTER);
         table.setDefaultRenderer(String.class, centerRenderer);
 
-        for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++)
-        {
+        for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
             table.getColumnModel().getColumn(columnIndex).setCellRenderer(centerRenderer);
         }
 
@@ -225,14 +224,50 @@ public class A3_View_CarDetails extends JFrame
     public void setWindowsListener(WindowListener w) {
         this.addWindowListener(w);
     }
+
+    public String[] getPANEL_NAMES() {return PANEL_NAMES;}
+    public JPanel getDisplay_car_panel() {return display_car_panel;}
+    public JPanel getAdd_car_panel() {return add_car_panel;}
+    public JPanel getRemove_car_panel() {return remove_car_panel;}
+    public JPanel getEdit_car_panel() {return edit_car_panel;}
+    public JTabbedPane getTabbedPane() {return tabbedPane;}
+    public JFrame getFrame() {return frame;}
+    public String[] getColumn_names() {return column_names;}
+    public DefaultTableModel getDefault_table_model() {return default_table_model;}
+    public JTable getTable() {return table;}
+    public String[] getCountries() {return countries;}
+    public String[] getYear() {return year;}
+    public String[] getDoors() {return doors;}
+    public String[] getPower_type() {return power_type;}
     public JTextField getSeries_field() {return series_field;}
     public JTextField getMake_field() {return make_field;}
+    public JLabel getCountries_label() {return countries_label;}
+    public JLabel getYear_label() {return year_label;}
+    public JLabel getDoors_label() {return doors_label;}
+    public JLabel getPower_type_label() {return power_type_label;}
+    public JLabel getMake_label() {return make_label;}
+    public JLabel getSeries_label() {return series_label;}
     public JComboBox<String> getCountries_comboBox() {return countries_comboBox;}
     public JComboBox<String> getYear_comboBox() {return year_comboBox;}
     public JComboBox<String> getDoors_comboBox() {return doors_comboBox;}
     public JComboBox<String> getPower_type_comboBox() {return power_type_comboBox;}
     public JButton getAdd_button() {return add_button;}
-    public String[] getColumn_names() {return column_names;}
-    public DefaultTableModel getDefault_table_model() {return default_table_model;}
-    public JTable getTable() {return table;}
+    public JTextField getId_field() {return id_field;}
+    public JLabel getId_label() {return id_label;}
+    public JButton getRemove_button() {return remove_button;}
+    public JTextField getE_series_field() {return e_series_field;}
+    public JTextField getE_make_field() {return e_make_field;}
+    public JTextField getE_id_field() {return e_id_field;}
+    public JLabel getE_id_label() {return e_id_label;}
+    public JLabel getE_countries_label() {return e_countries_label;}
+    public JLabel getE_year_label() {return e_year_label;}
+    public JLabel getE_doors_label() {return e_doors_label;}
+    public JLabel getE_power_type_label() {return e_power_type_label;}
+    public JLabel getE_make_label() {return e_make_label;}
+    public JLabel getE_series_label() {return e_series_label;}
+    public JComboBox<String> getE_countries_comboBox() {return e_countries_comboBox;}
+    public JComboBox<String> getE_year_comboBox() {return e_year_comboBox;}
+    public JComboBox<String> getE_doors_comboBox() {return e_doors_comboBox;}
+    public JComboBox<String> getE_power_type_comboBox() {return e_power_type_comboBox;}
+    public JButton getEdit_button() {return edit_button;}
 }

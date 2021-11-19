@@ -1,22 +1,24 @@
 package Assignment_3;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
+import java.awt.event.*;
+import java.io.*;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 
-public class A3_Controller_CarDetails implements ActionListener, WindowListener
-{
+public class A3_Controller_CarDetails implements ActionListener, WindowListener {
     private final A3_View_CarDetails gui_view;
-    private final ArrayList<Car> cars;
+    public ArrayList<Car> cars;
     private int id = 0;
+
     public A3_Controller_CarDetails() {
         cars = new ArrayList<>();
         gui_view = new A3_View_CarDetails();
 
         gui_view.init();
+
         gui_view.setWindowsListener(this);
+        gui_view.getFrame().addWindowListener(this);
+
         gui_view.getSeries_field().addActionListener(this);
         gui_view.getMake_field().addActionListener(this);
         gui_view.getCountries_comboBox().addActionListener(this);
@@ -29,61 +31,60 @@ public class A3_Controller_CarDetails implements ActionListener, WindowListener
     }
 
     //  ADD
-    private void add_to_car() {
+    private void add_to_car() throws RemoteException {
         /* ADDS TO THE MODEL BY GETTING THE DATA IN THE TEXT FIELD */
         String make = gui_view.getMake_field().getText();
         String series = gui_view.getSeries_field().getText();
-        if (make.isEmpty()) { make = "N/A"; }
-        if (series.isEmpty()) { series = "N/A"; }
-        Car c = new Car(
-                id,
-                make,
-                series,
-                gui_view.getCountries_comboBox().getSelectedItem().toString(),
-                gui_view.getPower_type_comboBox().getSelectedItem().toString(),
-                Integer.parseInt(gui_view.getYear_comboBox().getSelectedItem().toString()),
-                Integer.parseInt(gui_view.getDoors_comboBox().getSelectedItem().toString()));
+        if (make.isEmpty()) {make = "N/A";}
+        if (series.isEmpty()) {series = "N/A";}
+        Car c = new Car(id, make, series, gui_view.getCountries_comboBox().getSelectedItem().toString(), gui_view.getPower_type_comboBox().getSelectedItem().toString(), Integer.parseInt(gui_view.getYear_comboBox().getSelectedItem().toString()), Integer.parseInt(gui_view.getDoors_comboBox().getSelectedItem().toString()));
         cars.add(c);
         add_car_to_table(c);
         id++;
     }
+
     public void add_car_to_table(Car car) {
         gui_view.getDefault_table_model().addRow(car.getData());
     }
+
     //  REMOVE
     private void remove_from_car(int i) {
-        cars.remove(i);
-        remove_car_from_table(i);
+        for (int j = 0; j < cars.size() - 1; j++) {
+            if (cars.get(j).getID() == i) {
+                cars.remove(j);
+                remove_car_from_table(j);
+            }
+        }
+
     }
+
     private void remove_car_from_table(int i) {gui_view.getDefault_table_model().removeRow(i);}
+
     //  EDIT
     private void edit_from_car(int i) {
         String make = gui_view.getE_make_field().getText();
         String series = gui_view.getE_series_field().getText();
-        if (make.isEmpty()) { make = "N/A"; }
-        if (series.isEmpty()) { series = "N/A"; }
-        Car c = new Car(
-                Integer.parseInt(gui_view.getE_id_field().getText()),
-                make,
-                series,
-                gui_view.getE_countries_comboBox().getSelectedItem().toString(),
-                gui_view.getE_power_type_comboBox().getSelectedItem().toString(),
-                Integer.parseInt(gui_view.getE_year_comboBox().getSelectedItem().toString()),
-                Integer.parseInt(gui_view.getE_doors_comboBox().getSelectedItem().toString()));
-        cars.set(i, c);
-        gui_view.getDefault_table_model().setValueAt(make,i,1);
-        gui_view.getDefault_table_model().setValueAt(series,i,2);
-        gui_view.getDefault_table_model().setValueAt(gui_view.getE_countries_comboBox().getSelectedItem().toString(),i,4);
-        gui_view.getDefault_table_model().setValueAt(gui_view.getE_power_type_comboBox().getSelectedItem().toString(),i,3);
-        gui_view.getDefault_table_model().setValueAt(Integer.parseInt(gui_view.getE_doors_comboBox().getSelectedItem().toString()),i,6);
-        gui_view.getDefault_table_model().setValueAt(Integer.parseInt(gui_view.getE_year_comboBox().getSelectedItem().toString()),i,5);
+        if (make.isEmpty()) {make = "N/A";}
+        if (series.isEmpty()) {series = "N/A";}
+        Car c = new Car(Integer.parseInt(gui_view.getE_id_field().getText()), make, series, gui_view.getE_countries_comboBox().getSelectedItem().toString(), gui_view.getE_power_type_comboBox().getSelectedItem().toString(), Integer.parseInt(gui_view.getE_year_comboBox().getSelectedItem().toString()), Integer.parseInt(gui_view.getE_doors_comboBox().getSelectedItem().toString()));
+        for (int j = 0; j < cars.size() - 1; j++) {
+            if (cars.get(j).getID() == i) {
+                cars.set(j, c);
+                gui_view.getDefault_table_model().setValueAt(make, j, 1);
+                gui_view.getDefault_table_model().setValueAt(series, j, 2);
+                gui_view.getDefault_table_model().setValueAt(gui_view.getE_countries_comboBox().getSelectedItem().toString(), j, 4);
+                gui_view.getDefault_table_model().setValueAt(gui_view.getE_power_type_comboBox().getSelectedItem().toString(), j, 3);
+                gui_view.getDefault_table_model().setValueAt(Integer.parseInt(gui_view.getE_doors_comboBox().getSelectedItem().toString()), j, 6);
+                gui_view.getDefault_table_model().setValueAt(Integer.parseInt(gui_view.getE_year_comboBox().getSelectedItem().toString()), j, 5);
+            }
+        }
     }
-   //private void edit_car_from_table(int i) {gui_view.getDefault_table_model().up(i);}
+
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         if (actionEvent.getSource() == gui_view.getAdd_button()) {
             add_to_car();
-            System.out.println("ADD BUTTON HAS BEEN CLICKED");
+            System.out.println("A BUTTON HAS BEEN CLICKED");
         }
         if (actionEvent.getSource() == gui_view.getRemove_button()) {
             remove_from_car(Integer.parseInt(gui_view.getId_field().getText()));
@@ -95,14 +96,54 @@ public class A3_Controller_CarDetails implements ActionListener, WindowListener
         }
     }
 
+    private void ExecuteSerialization() throws IOException {
+        FileOutputStream fileOut = new FileOutputStream("CarsSet.txt");
+        ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
+        SerializeMembers(cars, objectOut);
+        objectOut.close();
+    }
+
+    private void ExecuteDeserialization() throws IOException, ClassNotFoundException {
+        FileInputStream fileIn = new FileInputStream("CarsSet.txt");
+        ObjectInputStream objectIn = new ObjectInputStream(fileIn);
+        DeserializeMembers(cars, objectIn);
+        objectIn.close();
+    }
+
+    private static void SerializeMembers(ArrayList<Car> cars, ObjectOutputStream objectOut) throws IOException {
+        objectOut.writeObject(cars);
+    }
+
+
+    private void DeserializeMembers(ArrayList<Car> cars, ObjectInputStream objectIn) throws IOException, ClassNotFoundException {
+        cars = (ArrayList) objectIn.readObject();
+
+        for (Car car : cars) {
+            System.out.println(car);
+        }
+
+        for (Car car : cars) {
+            add_car_to_table(car);
+        }
+    }
+
+
     @Override
     public void windowOpened(WindowEvent windowEvent) {
-
+        try {
+            ExecuteDeserialization();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void windowClosing(WindowEvent windowEvent) {
-
+        try {
+            ExecuteSerialization();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

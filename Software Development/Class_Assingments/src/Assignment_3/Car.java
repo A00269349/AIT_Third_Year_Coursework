@@ -1,15 +1,19 @@
 package Assignment_3;
+import java.io.Serializable;
+import java.rmi.server.UnicastRemoteObject;
 
-public class Car
+public class Car extends UnicastRemoteObject implements CarInterface, Serializable
 {
     private String make, series, country, power_type;
     private int id, year, doors;
 
     public Car(int id, String make, String series, String power_type, String country, int year, int doors) {
+        super();
         this.make = make;
         this.series = series;
         this.country = country;
         this.power_type = power_type;
+
         this.id = id;
         this.year = year;
         this.doors = doors;
@@ -21,7 +25,7 @@ public class Car
     public String getPower_type() {return power_type;}
     public int getYear() {return year;}
     public int getDoors() {return doors;}
-    public int getID() {return id;}
+    public int getID() {return this.id;}
 
     public void setMake(String make) {
         this.make = make;
@@ -48,7 +52,6 @@ public class Car
     public String[] getData() {
         return new String[]{
                 Integer.toString(id), make, series, country, power_type,
-
                 Integer.toString(year),
                 Integer.toString(doors)
         };
@@ -66,5 +69,4 @@ public class Car
                 ", id=" + id +
                 '}';
     }
-
 }

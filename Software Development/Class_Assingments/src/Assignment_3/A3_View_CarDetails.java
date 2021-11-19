@@ -7,8 +7,7 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.WindowListener;
 
-public class A3_View_CarDetails extends JFrame
-{
+public class A3_View_CarDetails extends JFrame {
     //  TABBED PANELS
     private final String[] PANEL_NAMES = {"HOME", "DISPLAY", "ADD", "REMOVE", "EDIT"};
     private final JPanel display_car_panel = new JPanel();
@@ -77,8 +76,9 @@ public class A3_View_CarDetails extends JFrame
 
     public A3_View_CarDetails() {
         this.setLayout(new BorderLayout());
-        this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
+
     public void init() {
         create_tabs();
         create_display_car_panel();
@@ -86,7 +86,6 @@ public class A3_View_CarDetails extends JFrame
         create_edit_car_panel();
         create_remove_car_panel();
         frame.add(tabbedPane);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(750, 750);
         frame.setVisible(true);
     }
@@ -98,6 +97,7 @@ public class A3_View_CarDetails extends JFrame
         tabbedPane.addTab(PANEL_NAMES[3], remove_car_panel);
         tabbedPane.addTab(PANEL_NAMES[4], edit_car_panel);
     }
+
     private void create_display_car_panel() {
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(2, 0));
@@ -117,6 +117,7 @@ public class A3_View_CarDetails extends JFrame
         panel.add(scrollPane);
         display_car_panel.add(panel);
     }
+
     private void create_add_car_panel() {
         JPanel panel = new JPanel();
 
@@ -143,6 +144,7 @@ public class A3_View_CarDetails extends JFrame
         panel.add(add_button, gbc);
         add_car_panel.add(panel);
     }
+
     private void create_edit_car_panel() {
         JPanel panel = new JPanel();
         GridBagLayout layout = new GridBagLayout();
@@ -168,6 +170,7 @@ public class A3_View_CarDetails extends JFrame
         panel.add(edit_button, gbc);
         edit_car_panel.add(panel);
     }
+
     private void create_remove_car_panel() {
         JPanel panel = new JPanel();
         GridBagLayout layout = new GridBagLayout();
@@ -205,6 +208,7 @@ public class A3_View_CarDetails extends JFrame
         gbc.weighty = 1.0;
         return gbc;
     }
+
     private void add_to_grid_bag(JPanel panel, int y, JLabel label, JComboBox<String> comboBox) {
         GridBagConstraints gbc;
         gbc = create_grid_bag(0, y);
@@ -212,6 +216,7 @@ public class A3_View_CarDetails extends JFrame
         gbc = create_grid_bag(1, y);
         panel.add(comboBox, gbc);
     }
+
     private void add_to_grid_bag(JPanel panel, int y, JLabel label, JTextField textField) {
         GridBagConstraints gbc;
         gbc = create_grid_bag(0, y);
@@ -226,48 +231,92 @@ public class A3_View_CarDetails extends JFrame
     }
 
     public String[] getPANEL_NAMES() {return PANEL_NAMES;}
+
     public JPanel getDisplay_car_panel() {return display_car_panel;}
+
     public JPanel getAdd_car_panel() {return add_car_panel;}
+
     public JPanel getRemove_car_panel() {return remove_car_panel;}
+
     public JPanel getEdit_car_panel() {return edit_car_panel;}
+
     public JTabbedPane getTabbedPane() {return tabbedPane;}
+
     public JFrame getFrame() {return frame;}
+
     public String[] getColumn_names() {return column_names;}
+
     public DefaultTableModel getDefault_table_model() {return default_table_model;}
+
     public JTable getTable() {return table;}
+
     public String[] getCountries() {return countries;}
+
     public String[] getYear() {return year;}
+
     public String[] getDoors() {return doors;}
+
     public String[] getPower_type() {return power_type;}
+
     public JTextField getSeries_field() {return series_field;}
+
     public JTextField getMake_field() {return make_field;}
+
     public JLabel getCountries_label() {return countries_label;}
+
     public JLabel getYear_label() {return year_label;}
+
     public JLabel getDoors_label() {return doors_label;}
+
     public JLabel getPower_type_label() {return power_type_label;}
+
     public JLabel getMake_label() {return make_label;}
+
     public JLabel getSeries_label() {return series_label;}
+
     public JComboBox<String> getCountries_comboBox() {return countries_comboBox;}
+
     public JComboBox<String> getYear_comboBox() {return year_comboBox;}
+
     public JComboBox<String> getDoors_comboBox() {return doors_comboBox;}
+
     public JComboBox<String> getPower_type_comboBox() {return power_type_comboBox;}
+
     public JButton getAdd_button() {return add_button;}
+
     public JTextField getId_field() {return id_field;}
+
     public JLabel getId_label() {return id_label;}
+
     public JButton getRemove_button() {return remove_button;}
+
     public JTextField getE_series_field() {return e_series_field;}
+
     public JTextField getE_make_field() {return e_make_field;}
+
     public JTextField getE_id_field() {return e_id_field;}
+
     public JLabel getE_id_label() {return e_id_label;}
+
     public JLabel getE_countries_label() {return e_countries_label;}
+
     public JLabel getE_year_label() {return e_year_label;}
+
     public JLabel getE_doors_label() {return e_doors_label;}
+
     public JLabel getE_power_type_label() {return e_power_type_label;}
+
     public JLabel getE_make_label() {return e_make_label;}
+
     public JLabel getE_series_label() {return e_series_label;}
+
     public JComboBox<String> getE_countries_comboBox() {return e_countries_comboBox;}
+
     public JComboBox<String> getE_year_comboBox() {return e_year_comboBox;}
+
     public JComboBox<String> getE_doors_comboBox() {return e_doors_comboBox;}
+
     public JComboBox<String> getE_power_type_comboBox() {return e_power_type_comboBox;}
+
     public JButton getEdit_button() {return edit_button;}
 }

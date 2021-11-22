@@ -1,11 +1,6 @@
-package Assignment_3;
-
 import java.io.*;
 import java.rmi.Naming;
-import java.rmi.Remote;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class CarServer {
     public CarServer() throws IOException, ClassNotFoundException {
@@ -16,14 +11,14 @@ public class CarServer {
         System.out.println("SERVER HAS STARTED");
 
         CarLists cars = new CarLists();
-        ArrayList<Car> cars_arraylist = new ArrayList<>();
+
         try {
             // DESERIALIZE
             FileInputStream fileIn = new FileInputStream("CarsSet.txt");
             ObjectInputStream objectIn = new ObjectInputStream(fileIn);
-            cars_arraylist = (ArrayList) objectIn.readObject();
+            cars = (CarLists) objectIn.readObject();
 
-
+            ArrayList<Car> cars_arraylist = cars.getList();
             for (Car car : cars_arraylist) {
                 cars.addToList(car);
             }
@@ -31,13 +26,14 @@ public class CarServer {
             objectIn.close();
             Naming.rebind("CARLIST", cars);
         } catch (Exception e) {
-            cars_arraylist.add(new Car(0, "null", "null ", "null ", " null", 2002, 13));
+            cars.addToList(new Car(0, "null", "null ", "null ", " null", 2002, 13));
 
             FileOutputStream fileOut = new FileOutputStream("CarsSet.txt");
             ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
             objectOut.writeObject(cars);
             objectOut.close();
 
+            ArrayList<Car> cars_arraylist = cars.getList();
             for (Car name : cars_arraylist) {
                 System.out.println(name);
             }
@@ -45,13 +41,8 @@ public class CarServer {
             FileInputStream fileIn = new FileInputStream("CarsSet.txt");
             ObjectInputStream objectIn = new ObjectInputStream(fileIn);
             cars = (CarLists) objectIn.readObject();
-
-            for (Car car : cars_arraylist) {
-                cars.addToList(car);
-            }
-
             objectIn.close();
-            Naming.rebind("cars", cars);
+            Naming.rebind("DeserializedCars", cars);
         }
         System.out.println("SERVER HAS ENDED");
     }

@@ -18,7 +18,6 @@ public class HouseServer {
 			hl.addToList(bungalow);
 			hl.addToList(dormer);
 			
-			
 			Naming.rebind("listOfHouses", hl);
 			
 		}catch(Exception e) {

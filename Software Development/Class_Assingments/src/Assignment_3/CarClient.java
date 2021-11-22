@@ -1,19 +1,22 @@
 package Assignment_3;
 
 import java.rmi.Naming;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class CarClient {
-    public static void main(String[] args) {
+    public CarClient() {
+        StartClient();
+    }
+    public static void StartClient() {
         String url = "rmi:///";
         System.out.println("CLIENT HAS STARTED");
         try {
-            CarInterface h1 = (CarInterface) Naming.lookup(url + "BUNGALOW_Car");
-            String ownersBung = h1.getOwner();
-            System.out.println("RESULT: " + ownersBung);
-
-            CarInterface h2 = (CarInterface) Naming.lookup(url + "DORMER_Car");
-            String ownersdorm = h2.getOwner();
-            System.out.println("RESULT: " + ownersdorm);
+            CarListsInterface carList = (CarListsInterface) Naming.lookup("CARLIST");
+            ArrayList<Car> actualCarList = carList.getList();
+            for(CarInterface cars : actualCarList) {
+                System.out.println(Arrays.toString(cars.getData()));
+            }
         }catch (Exception e) {e.printStackTrace();}
     }
 }

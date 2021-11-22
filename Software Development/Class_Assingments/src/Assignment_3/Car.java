@@ -1,19 +1,19 @@
 package Assignment_3;
 import java.io.Serializable;
+import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
 
-public class Car extends UnicastRemoteObject implements CarInterface, Serializable
+public class Car extends UnicastRemoteObject implements CarInterface
 {
     private String make, series, country, power_type;
     private int id, year, doors;
 
-    public Car(int id, String make, String series, String power_type, String country, int year, int doors) {
-        super();
+    public Car( int id, String make, String series, String country, String power_type, int year, int doors) throws RemoteException{
         this.make = make;
         this.series = series;
         this.country = country;
         this.power_type = power_type;
-
         this.id = id;
         this.year = year;
         this.doors = doors;
@@ -25,7 +25,8 @@ public class Car extends UnicastRemoteObject implements CarInterface, Serializab
     public String getPower_type() {return power_type;}
     public int getYear() {return year;}
     public int getDoors() {return doors;}
-    public int getID() {return this.id;}
+    public int getId() {return this.id;}
+
 
     public void setMake(String make) {
         this.make = make;
@@ -56,7 +57,6 @@ public class Car extends UnicastRemoteObject implements CarInterface, Serializab
                 Integer.toString(doors)
         };
     }
-
     @Override
     public String toString() {
         return "Car{" +

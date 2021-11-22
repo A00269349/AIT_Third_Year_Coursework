@@ -16,7 +16,6 @@ public class HouseList extends UnicastRemoteObject implements HouseListInterface
 		houses.add(h);
 		
 	}
-
 	@Override
 	public ArrayList<House> getList() throws RemoteException {
 		// TODO Auto-generated method stub

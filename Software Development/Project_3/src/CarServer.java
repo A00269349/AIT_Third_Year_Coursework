@@ -11,39 +11,40 @@ public class CarServer {
         System.out.println("SERVER HAS STARTED");
         CarLists cars = new CarLists();
         try {
+            System.out.println("IN TRY");
             // DESERIALIZE
-            FileInputStream fileIn = new FileInputStream("CarsSet.txt");
+            FileInputStream fileIn = new FileInputStream("CarsSet.ser");
             ObjectInputStream objectIn = new ObjectInputStream(fileIn);
             cars = (CarLists) objectIn.readObject();
 
             ArrayList<Car> cars_arraylist = cars.getList();
+
             for (Car car : cars_arraylist) {
-                cars.addToList(car);
+                System.out.println(car);
             }
 
-            objectIn.close();
             Naming.rebind("DeserializedCars", cars);
+            objectIn.close();
         } catch (Exception e) {
-            cars.addToList(new Car(0, "null", "null ", "null ", " null", 2002, 13));
-            cars.addToList(new Car(0, "null", "null ", "null ", " null", 2002, 13));
-            cars.addToList(new Car(0, "null", "null ", "null ", " null", 2002, 13));
-            cars.addToList(new Car(0, "null", "null ", "null ", " null", 2002, 13));
-            cars.addToList(new Car(0, "null", "null ", "null ", " null", 2002, 13));
-            cars.addToList(new Car(0, "null", "null ", "null ", " null", 2002, 13));
-            cars.addToList(new Car(0, "null", "null ", "null ", " null", 2002, 13));
-            cars.addToList(new Car(0, "null", "null ", "null ", " null", 2002, 13));
 
-            FileOutputStream fileOut = new FileOutputStream("CarsSet.txt");
+            e.printStackTrace();
+            System.out.println("IN CATCH");
+
+            for (int i = 0; i < 10; i++) {
+                cars.addToList(new Car(0, "N/A", "N/A ", "N/A ", " N/A", 2002, 4));
+            }
+
+            FileOutputStream fileOut = new FileOutputStream("CarsSet.ser");
             ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
             objectOut.writeObject(cars);
             objectOut.close();
 
             ArrayList<Car> cars_arraylist = cars.getList();
-            for (Car name : cars_arraylist) {
-                System.out.println(name);
+            for (Car car : cars_arraylist) {
+                System.out.println(car);
             }
 
-            FileInputStream fileIn = new FileInputStream("CarsSet.txt");
+            FileInputStream fileIn = new FileInputStream("CarsSet.ser");
             ObjectInputStream objectIn = new ObjectInputStream(fileIn);
             cars = (CarLists) objectIn.readObject();
             objectIn.close();

@@ -9,12 +9,11 @@ import java.util.ArrayList;
 public class A3_Controller_CarDetails implements ActionListener, WindowListener
 {
     private final A3_View_CarDetails gui_view;
-    public CarListsInterface carlists;
     public ArrayList<Car> cars;
     private int id = 0;
 
-    public A3_Controller_CarDetails() throws RemoteException {
-        cars = carlists.getList();
+    public A3_Controller_CarDetails(ArrayList<Car> arraylist_car) throws RemoteException {
+        cars = arraylist_car;
         gui_view = new A3_View_CarDetails();
 
         gui_view.init();
@@ -34,7 +33,7 @@ public class A3_Controller_CarDetails implements ActionListener, WindowListener
     }
 
     //  ADD
-    private void add_to_car() throws RemoteException {
+    private void add_to_car() throws RemoteException  {
         /* ADDS TO THE MODEL BY GETTING THE DATA IN THE TEXT FIELD */
         String make = gui_view.getMake_field().getText();
         String series = gui_view.getSeries_field().getText();
@@ -129,15 +128,8 @@ public class A3_Controller_CarDetails implements ActionListener, WindowListener
         objectOut.writeObject(cars);
     }
     private void DeserializeMembers(ArrayList<Car> cars, ObjectInputStream objectIn) throws IOException, ClassNotFoundException {
-        cars = (ArrayList) objectIn.readObject();
-
-        for (Car car : cars) {
-            System.out.println(car);
-        }
-
-        for (Car car : cars) {
+        for (Car car : cars)
             add_car_to_table(car);
-        }
     }
 
     @Override

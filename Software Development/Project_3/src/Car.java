@@ -1,7 +1,8 @@
+import java.io.Serializable;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
-public class Car extends UnicastRemoteObject implements CarInterface
+public class Car extends UnicastRemoteObject implements CarInterface, Serializable
 {
     private String make, series, country, power_type;
     private int id, year, doors;

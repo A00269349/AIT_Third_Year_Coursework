@@ -2,25 +2,35 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-import java.io.*;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class A3_Controller_CarDetails implements ActionListener, WindowListener
 {
     private final A3_View_CarDetails gui_view;
-    public ArrayList<Car> cars;
-    private int id = 0;
+    CarListsInterface carInterface;
+    CarLists cars = new CarLists();
+    private int id;
 
-    public A3_Controller_CarDetails(ArrayList<Car> arraylist_car) throws RemoteException {
-        cars = arraylist_car;
+    public A3_Controller_CarDetails(ArrayList<Car> carArrayList, CarListsInterface carInterface) throws RemoteException {
+        cars.cars = carArrayList;
+        this.carInterface = carInterface;
         gui_view = new A3_View_CarDetails();
-
+        try {
+            int size = carInterface.getListSize();
+            id = (size > 0) ? size : 0;
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
         gui_view.init();
-
         gui_view.setWindowsListener(this);
         gui_view.getFrame().addWindowListener(this);
-
         gui_view.getSeries_field().addActionListener(this);
         gui_view.getMake_field().addActionListener(this);
         gui_view.getCountries_comboBox().addActionListener(this);
@@ -33,7 +43,7 @@ public class A3_Controller_CarDetails implements ActionListener, WindowListener
     }
 
     //  ADD
-    private void add_to_car() throws RemoteException  {
+    private void add_to_car() throws RemoteException {
         /* ADDS TO THE MODEL BY GETTING THE DATA IN THE TEXT FIELD */
         String make = gui_view.getMake_field().getText();
         String series = gui_view.getSeries_field().getText();
@@ -41,20 +51,29 @@ public class A3_Controller_CarDetails implements ActionListener, WindowListener
         if (series.isEmpty()) {series = "N/A";}
         Car c = new Car(id, make, series, gui_view.getCountries_comboBox().getSelectedItem().toString(), gui_view.getPower_type_comboBox().getSelectedItem().toString(),
                 Integer.parseInt(gui_view.getYear_comboBox().getSelectedItem().toString()), Integer.parseInt(gui_view.getDoors_comboBox().getSelectedItem().toString()));
-        cars.add(c);
+
+        // cars.add(c);
+        cars.addToList(c);
         add_car_to_table(c);
         id++;
     }
 
-    public void add_car_to_table(Car car) {
+    public void add_car_to_table(CarInterface car) throws RemoteException {
         gui_view.getDefault_table_model().addRow(car.getData());
     }
 
     //  REMOVE
-    private void remove_from_car(int i) {
-        for (int j = 0; j < cars.size() - 1; j++) {
+    private void remove_from_car(int i) throws RemoteException {
+/*        for (int j = 0; j < cars.size() - 1; j++) {
             if (cars.get(j).getId() == i) {
                 cars.remove(j);
+                carInterface.removeFromList(j);
+                remove_car_from_table(j);
+            }
+        }  */
+        for (int j = 0; j < cars.getListSize() - 1; j++) {
+            if (cars.getIndex(j).getId() == i) {
+                cars.removeFromList(j);
                 remove_car_from_table(j);
             }
         }
@@ -71,9 +90,12 @@ public class A3_Controller_CarDetails implements ActionListener, WindowListener
         Car c = new Car(Integer.parseInt(gui_view.getE_id_field().getText()), make, series, gui_view.getE_countries_comboBox().getSelectedItem().toString(),
                 gui_view.getE_power_type_comboBox().getSelectedItem().toString(), Integer.parseInt(gui_view.getE_year_comboBox().getSelectedItem().toString()),
                 Integer.parseInt(gui_view.getE_doors_comboBox().getSelectedItem().toString()));
-        for (int j = 0; j < cars.size() - 1; j++) {
-            if (cars.get(j).getId() == i) {
-                cars.set(j, c);
+        //for (int j = 0; j < cars.size() - 1; j++) {
+        for (int j = 0; j < cars.getListSize() - 1; j++) {
+            //if (cars.get(j).getId() == i) {
+            if (cars.getIndex(j).getId() == i) {
+                //cars.set(j, c);
+                cars.setList(c, j);
                 gui_view.getDefault_table_model().setValueAt(make, j, 1);
                 gui_view.getDefault_table_model().setValueAt(series, j, 2);
                 gui_view.getDefault_table_model().setValueAt(gui_view.getE_countries_comboBox().getSelectedItem().toString(), j, 4);
@@ -96,7 +118,12 @@ public class A3_Controller_CarDetails implements ActionListener, WindowListener
             System.out.println("A BUTTON HAS BEEN CLICKED");
         }
         if (actionEvent.getSource() == gui_view.getRemove_button()) {
-            remove_from_car(Integer.parseInt(gui_view.getId_field().getText()));
+            try {
+                remove_from_car(Integer.parseInt(gui_view.getId_field().getText()));
+            }
+            catch (RemoteException e) {
+                e.printStackTrace();
+            }
             System.out.println("REMOVE BUTTON HAS BEEN CLICKED");
         }
         if (actionEvent.getSource() == gui_view.getEdit_button()) {
@@ -110,46 +137,34 @@ public class A3_Controller_CarDetails implements ActionListener, WindowListener
         }
     }
 
-    private void ExecuteSerialization() throws IOException {
-        FileOutputStream fileOut = new FileOutputStream("CarsSet.txt");
-        ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
-        SerializeMembers(cars, objectOut);
-        objectOut.close();
-    }
-
-    private void ExecuteDeserialization() throws IOException, ClassNotFoundException {
-        FileInputStream fileIn = new FileInputStream("CarsSet.txt");
-        ObjectInputStream objectIn = new ObjectInputStream(fileIn);
-        DeserializeMembers(cars, objectIn);
-        objectIn.close();
-    }
-
-    private static void SerializeMembers(ArrayList<Car> cars, ObjectOutputStream objectOut) throws IOException {
-        objectOut.writeObject(cars);
-    }
-    private void DeserializeMembers(ArrayList<Car> cars, ObjectInputStream objectIn) throws IOException, ClassNotFoundException {
-        for (Car car : cars)
-            add_car_to_table(car);
-    }
-
     @Override
     public void windowOpened(WindowEvent windowEvent) {
-        try {
-            ExecuteDeserialization();
-        }
-        catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
+        for (CarInterface car : cars.cars) {
+            try {
+                add_car_to_table(car);
+                System.out.println(car);
+                System.out.println(Arrays.toString(car.getData()));
+            }
+            catch (RemoteException e) {
+                e.printStackTrace();
+            }
         }
     }
 
     @Override
     public void windowClosing(WindowEvent windowEvent) {
         try {
-            ExecuteSerialization();
+
+            FileOutputStream fileOut = new FileOutputStream("cars.set");
+            ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
+            objectOut.writeObject(cars);
+            objectOut.close();
+            Naming.rebind("DeserializedCars", cars);
         }
         catch (IOException e) {
             e.printStackTrace();
         }
+        System.exit(0);
     }
 
     @Override

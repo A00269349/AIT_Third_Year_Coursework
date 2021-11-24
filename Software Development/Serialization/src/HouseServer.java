@@ -1,6 +1,4 @@
-package RMI;
 import java.rmi.Naming;
-import java.rmi.*;
 public class HouseServer {
 
 	public static void main(String[] args) {

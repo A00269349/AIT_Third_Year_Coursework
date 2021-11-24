@@ -3,7 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="576bbd1b-475d-49a6-b983-acad4126076b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab_1_Thread/src/SimpleThreadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab_1_Thread/src/SimpleThreadTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab_1_Thread/src/SimpleThreadRunnableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab_1_Thread/src/SimpleThreadRunnableTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Software Development/Project_3/CarsSet.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Software Development/Project_3/out/production/Project_3/A3_Controller_CarDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Software Development/Project_3/out/production/Project_3/A3_Controller_CarDetails.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Software Development/Project_3/out/production/Project_3/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Software Development/Project_3/out/production/Project_3/Car.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Software Development/Project_3/out/production/Project_3/CarClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Software Development/Project_3/out/production/Project_3/CarClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Software Development/Project_3/out/production/Project_3/CarLists.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Software Development/Project_3/out/production/Project_3/CarLists.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Software Development/Project_3/out/production/Project_3/CarListsInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Software Development/Project_3/out/production/Project_3/CarListsInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Software Development/Project_3/out/production/Project_3/CarServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Software Development/Project_3/out/production/Project_3/CarServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Software Development/Project_3/src/A3_Controller_CarDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Software Development/Project_3/src/A3_Controller_CarDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Software Development/Project_3/src/A3_Main_CarDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Software Development/Project_3/src/A3_Main_CarDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Software Development/Project_3/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Software Development/Project_3/src/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Software Development/Project_3/src/CarClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Software Development/Project_3/src/CarClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Software Development/Project_3/src/CarInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Software Development/Project_3/src/CarInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Software Development/Project_3/src/CarLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Software Development/Project_3/src/CarLists.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Software Development/Project_3/src/CarListsInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Software Development/Project_3/src/CarListsInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Software Development/Project_3/src/CarServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Software Development/Project_3/src/CarServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Software Development/Serialization/src/RMI/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Software Development/Serialization/src/House.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Software Development/Serialization/src/RMI/HouseClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Software Development/Serialization/src/HouseClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Software Development/Serialization/src/RMI/HouseInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Software Development/Serialization/src/HouseInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Software Development/Serialization/src/RMI/HouseList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Software Development/Serialization/src/HouseList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Software Development/Serialization/src/RMI/HouseListInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Software Development/Serialization/src/HouseListInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Software Development/Serialization/src/RMI/HouseServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Software Development/Serialization/src/HouseServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +53,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Software Development" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -102,8 +125,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Operating Systems" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -111,6 +152,33 @@
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <module name="Operating Systems" />
       <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -133,8 +201,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1633522304683</updated>
+      <workItem from="1637757740171" duration="454000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
